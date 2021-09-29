@@ -1,10 +1,17 @@
 {
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "jest"
   },
   "dependencies": {
     "csv-parse": "^4.16.3",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^27.2.3"
+  },
+  "standard": {
+    "env": [ "jest" ]
   }
 }
