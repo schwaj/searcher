@@ -111,7 +111,6 @@ describe('search', () => {
     getRestaurants.mockImplementation(() => restaurantData)
 
     const results = await restaurantService.search({}, pageNumber, pageSize)
-    // console.log(results)
 
     expect(getRestaurants).toHaveBeenCalled()
     expect(results.restaurants).toEqual(outputData.restaurants)

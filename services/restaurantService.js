@@ -2,7 +2,6 @@ const db = require('../data')
 const _ = require('lodash')
 
 exports.search = async ({ name, rating, distance, price, cuisine }, page, pageSize) => {
-  const startTime = new Date().getTime()
   page = page < 1 ? 1 : page
   const errors = []
   let filteredRestaurants = []
@@ -53,8 +52,6 @@ exports.search = async ({ name, rating, distance, price, cuisine }, page, pageSi
       curr: page,
       next: (page * pageSize) >= filteredRestaurants.length ? null : page + 1,
       pageSize: pageSize
-    },
-    responseTime: `${new Date().getTime() - startTime}ms`
-
+    }
   }
 }
